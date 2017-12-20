@@ -1075,6 +1075,10 @@ func (f *Fissile) generateKubeRoles(settings kube.ExportSettings) error {
 				if err != nil {
 					return err
 				}
+				f.UI.Printf("Writing deps %v, statefulSet %v\n",
+					color.CyanString(deps),
+					color.CyanString(statefulSet),
+				)
 				err = enc.Encode(deps)
 				if err != nil {
 					return err
